@@ -1,9 +1,21 @@
+import { fetchTrendingMovies } from "components/FetchTrendingMovies"
 
+export const Home = ({movies}) => {
+  
+    
+ console.log(movies)
 
-export const Home = () => {
+   
+    
     return (
         <>
-        <p>WITAJ W HOME</p>
+            <h4>Trending Today</h4>
+            {movies.map(r => (
+                <p>{r.title}</p>
+            )
+                
+            )}
         </>
+        
     )
 }
