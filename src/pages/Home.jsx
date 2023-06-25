@@ -1,11 +1,5 @@
-import { fetchTrendingMovies } from "components/FetchTrendingMovies"
 
 export const Home = ({movies}) => {
-  
-    
- console.log(movies)
-
-   
     
     return (
         <>
