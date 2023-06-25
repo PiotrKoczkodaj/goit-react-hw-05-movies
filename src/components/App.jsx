@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom';
 import { Routes, Route } from 'react-router-dom';
 import { MainMenu } from './MainMenu/MainMenu';
-import { Home } from 'pages/Home';
+import { Home } from 'pages/Home/Home';
 import { Movies } from 'pages/Movies';
 import { fetchTrendingMovies } from './FetchTrendingMovies';
+
 import { useState } from 'react';
 import { useEffect } from 'react';
 
