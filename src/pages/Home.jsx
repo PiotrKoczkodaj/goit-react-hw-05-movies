@@ -10,11 +10,11 @@ export const Home = ({movies}) => {
     return (
         <>
             <h4>Trending Today</h4>
-            {movies.map(r => (
-                <p>{r.title}</p>
-            )
-                
-            )}
+            <ul>
+                {movies.map(movie => (
+                    <li key={movie.id}>{movie.title || movie.name }</li>
+                ))}
+            </ul>
         </>
         
     )
