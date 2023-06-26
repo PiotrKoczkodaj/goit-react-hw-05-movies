@@ -3,13 +3,17 @@ import { Routes, Route } from 'react-router-dom';
 import { MainMenu } from './MainMenu/MainMenu';
 import { Home } from 'pages/Home/Home';
 import { Movies } from 'pages/Movies';
+import { MovieDetails } from './MovieDetails/MovieDetails';
 import { fetchTrendingMovies } from './FetchTrendingMovies';
 
 import { useState } from 'react';
 import { useEffect } from 'react';
 
-export const App = () => {
 
+
+
+export const App = () => {
+ 
   const [trendingMovies, setTrendingMovies] = useState([]);
 
   useEffect(() => {
@@ -39,7 +43,8 @@ export const App = () => {
       </MainMenu>
       <Routes>
         <Route path='/' element={<Home movies={trendingMovies} />} />
-        <Route path='/movies' element={<Movies />}/>
+        <Route path='/movies' element={<Movies />}></Route>
+        <Route path="/movies/:movieId" element={<MovieDetails movies={ trendingMovies} />}/>
       </Routes>
     </div>
   );

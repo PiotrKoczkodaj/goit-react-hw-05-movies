@@ -8,4 +8,9 @@ export const fetchTrendingMovies = async () => {
 }
 
 
+export const  data = async () => {
+     fetchTrendingMovies().then(resp => {
+        return resp.results
+    })
+}
 
