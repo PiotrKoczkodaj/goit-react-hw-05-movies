@@ -8,7 +8,7 @@ export const MovieDetails = ({ movies }) => {
         if (movie.id === id) {
             console.log('G')
         }
-        return
+        return null
     })
 
     
