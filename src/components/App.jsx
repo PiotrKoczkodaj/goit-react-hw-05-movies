@@ -7,7 +7,7 @@ import { MoviesPage } from 'pages/MoviesPage/MoviesPage';
 import { fetchTrendingMovies } from 'utils/FetchTrendingMovies';
 export const App = () => {
 
- const [trendingMovies, setTrendingMovies] = useState([]);
+ const [ ,setTrendingMovies] = useState([]);
   
      useEffect(() => {
      fetchTrendingMovies().then(resp => {
