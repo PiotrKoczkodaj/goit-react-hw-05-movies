@@ -14,7 +14,8 @@ export const MovieDetailsPage = () => {
     trendingMovies.map(movie => {
         if (movie.id === movieId) {
         console.log('G')
-    }
+        }
+        return null
 })
 
     return (
