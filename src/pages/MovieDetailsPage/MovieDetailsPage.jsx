@@ -1,7 +1,9 @@
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams,Route,Routes } from 'react-router-dom';
 import { fetchMoviesInfo } from 'utils/FetchMoviesInfo';
 import { useEffect, useState } from 'react';
 import styles from './MovieDetailsPage.module.css';
+import { fetchMoviesCast } from 'utils/FetchMoviesCast';
+import { Cast } from 'components/Cast/Cast';
 
 export const MovieDetailsPage = () => {
   const { movieId } = useParams();
@@ -15,6 +17,7 @@ export const MovieDetailsPage = () => {
       });
   }, []);
     
+  
   return (
     <>
         <Link to="/">
@@ -39,11 +42,14 @@ export const MovieDetailsPage = () => {
           
           <div className={styles.additionalInformation}>
               <ul>
-                  <Link><li></li></Link>
-                  <Link><li></li></Link>
-                  
+                  <Link to="cast"><li>Cast</li></Link>
+                  <Link to="reviews"><li>Reviews</li></Link> 
               </ul>
-          </div>
+      </div>
+      <div>
+       <Cast/>
+        
+      </div>
     </>
   );
 };
