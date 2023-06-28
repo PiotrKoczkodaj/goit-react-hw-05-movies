@@ -1,8 +1,7 @@
-import { Link, useParams,Route,Routes } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { fetchMoviesInfo } from 'utils/FetchMoviesInfo';
 import { useEffect, useState } from 'react';
 import styles from './MovieDetailsPage.module.css';
-import { fetchMoviesCast } from 'utils/FetchMoviesCast';
 import { Cast } from 'components/Cast/Cast';
 
 export const MovieDetailsPage = () => {
@@ -15,9 +14,10 @@ export const MovieDetailsPage = () => {
       .then(resp => {
         return setMovieInfo({ ...resp });
       });
+    console.log(movieId)
   }, []);
     
-  
+  console.log(movieInfo)
   return (
     <>
         <Link to="/">
@@ -25,7 +25,7 @@ export const MovieDetailsPage = () => {
           </Link>
           
       <div className={styles.firstInformations}>
-        <img
+        <img alt={`${movieInfo.title} poster`}
           src={`https://image.tmdb.org/t/p/w500/${movieInfo.poster_path}`}
           width={200}
           height={400}
