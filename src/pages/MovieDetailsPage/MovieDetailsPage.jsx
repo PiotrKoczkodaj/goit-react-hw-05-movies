@@ -15,7 +15,7 @@ export const MovieDetailsPage = () => {
         if (movie.id === movieId) {
          console.log('c')
      }
-        
+        return null
 })
 
     return (
