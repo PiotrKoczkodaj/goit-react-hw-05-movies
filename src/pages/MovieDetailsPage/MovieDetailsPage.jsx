@@ -4,20 +4,13 @@ import { fetchTrendingMovies } from "utils/FetchTrendingMovies";
 
 export const MovieDetailsPage = () => {
     const { movieId } = useParams();
- const [trendingMovies, setTrendingMovies] = useState([]);
-  
-     useEffect(() => {
-     fetchTrendingMovies().then(resp => {
-       setTrendingMovies([...resp.data.results]);
-     });
-     }, []);
-    trendingMovies.map(movie => {
-        if (movie.id === movieId) {
-         console.log('c')
-     }
-        return null
-})
+ 
 
+    fetchTrendingMovies().then(resp => {
+        resp.data.results.map(movie => {
+            console.log(movie.id===movieId)
+            
+    })})
     return (
         <p>movieees</p>
     )
