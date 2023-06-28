@@ -9,7 +9,7 @@ export const fetchTrendingMovies = async () => {
       return resp;
     })
     .catch(error => {
-      console.log(error);
+      console.log(error)
     });
   return response;
 };
