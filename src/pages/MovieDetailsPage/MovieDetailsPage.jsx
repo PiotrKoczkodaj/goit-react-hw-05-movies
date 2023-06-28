@@ -14,10 +14,9 @@ export const MovieDetailsPage = () => {
       .then(resp => {
         return setMovieInfo({ ...resp });
       });
-    console.log(movieId)
-  }, []);
-    
-  console.log(movieInfo)
+  },[movieId]);
+    console.log(movieInfo)
+
   return (
     <>
         <Link to="/">
