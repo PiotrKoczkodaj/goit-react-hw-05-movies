@@ -5,11 +5,11 @@ import { fetchMoviesReview } from "utils/FetchMoviesReview"
 export const Review = () => {
     const { movieId } = useParams();
     const [review, setReview] = useState([])
+    const reviewPromise = fetchMoviesReview(movieId);
     
     useEffect(() => {
-        fetchMoviesReview(movieId).then(resp => setReview([...resp]));
-        
-    }, []);
+        reviewPromise.then(resp => setReview([...resp]));
+    }, [reviewPromise]);
 
     if (review.length === 0)
         

@@ -11,7 +11,7 @@ export const Cast = () => {
     castPromise.then(resp => {
       return setCast([...resp]);
     });
-  }, []);
+  }, [castPromise]);
 
   return (
     <ul>

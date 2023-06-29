@@ -5,6 +5,7 @@ import { HomePage } from 'pages/HomePage/HomePage';
 import { MovieDetailsPage } from 'pages/MovieDetailsPage/MovieDetailsPage';
 import { MoviesPage } from 'pages/MoviesPage/MoviesPage';
 import { fetchTrendingMovies } from 'utils/FetchTrendingMovies';
+import { Cast } from './Cast/Cast';
 import { Review } from './Review/Review';
 
 export const App = () => {
