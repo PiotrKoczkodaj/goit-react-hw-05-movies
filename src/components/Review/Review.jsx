@@ -6,9 +6,9 @@ export const Review = () => {
     const { movieId } = useParams();
     const [review, setReview] = useState([])
     const reviewPromise = fetchMoviesReview(movieId);
-    
+
     useEffect(() => {
-        reviewPromise.then(resp => setReview([...resp]));
+        reviewPromise.then(resp => { return setReview([...resp]) });
     }, [reviewPromise]);
 
     if (review.length === 0)
