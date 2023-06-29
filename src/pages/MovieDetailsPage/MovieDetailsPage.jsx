@@ -1,4 +1,4 @@
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams,Outlet } from 'react-router-dom';
 import { fetchMoviesInfo } from 'utils/FetchMoviesInfo';
 import { useEffect, useState } from 'react';
 import styles from './MovieDetailsPage.module.css';
@@ -46,7 +46,7 @@ export const MovieDetailsPage = () => {
               </ul>
       </div>
       <div>
-       <Cast/>
+       <Outlet/>
         
       </div>
     </>

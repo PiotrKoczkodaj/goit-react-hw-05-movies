@@ -6,6 +6,7 @@ import { MovieDetailsPage } from 'pages/MovieDetailsPage/MovieDetailsPage';
 import { MoviesPage } from 'pages/MoviesPage/MoviesPage';
 import { fetchTrendingMovies } from 'utils/FetchTrendingMovies';
 import { Cast } from './Cast/Cast';
+import { Review } from './Review/Review';
 export const App = () => {
 
  const [ ,setTrendingMovies] = useState([]);
@@ -33,7 +34,8 @@ export const App = () => {
           <Route index element={<HomePage />} />
           <Route path="/movies" element={<MoviesPage />} />
           <Route path="/movies/:movieId" element={<MovieDetailsPage />}>
-          <Route path="/movies/:movieId/cast" element ={<Cast/>}/>
+            <Route path="cast" element={<Cast />} />
+            <Route path="reviews" element={<Review/>} />
           </Route>
           
           
