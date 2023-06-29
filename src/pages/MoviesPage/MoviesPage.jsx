@@ -1,13 +1,19 @@
+import { useState } from "react";
+import { Link } from "react-router-dom";
+
 export const MoviesPage = () => {
 
-    const handleSubmit = (e) => {
+  const [queryValue, setQueryValue] = useState('');
+
+    const handleChange = (e) => {
         e.preventDefault();
-        console.log(e)
-    }
+        setQueryValue(e.target.value)
+    };
     return (
-        <form onSubmit={handleSubmit}>
-            <input type="text" />
-            <button type="submit">Search</button>
-        </form>
+         <form >
+            <input type="text" onChange={handleChange}/>
+            <Link to={`/movies?query=${queryValue}`}><button type="submit">Search</button></Link>
+            
+        </form>  
     )
 }
