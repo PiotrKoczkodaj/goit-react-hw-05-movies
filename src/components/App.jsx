@@ -7,8 +7,8 @@ import { MoviesPage } from 'pages/MoviesPage/MoviesPage';
 import { fetchTrendingMovies } from 'utils/FetchTrendingMovies';
 import { Cast } from './Cast/Cast';
 import { Review } from './Review/Review';
-export const App = () => {
 
+export const App = () => {
  const [ ,setTrendingMovies] = useState([]);
   
      useEffect(() => {
@@ -16,8 +16,6 @@ export const App = () => {
        setTrendingMovies([...resp.data.results]);
      });
      }, []);
-  
-
   
   return (
     <div
@@ -37,8 +35,6 @@ export const App = () => {
             <Route path="cast" element={<Cast />} />
             <Route path="reviews" element={<Review/>} />
           </Route>
-          
-          
         </Route>
       </Routes>
     </div>

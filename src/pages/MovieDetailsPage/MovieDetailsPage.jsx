@@ -15,8 +15,7 @@ export const MovieDetailsPage = () => {
         return setMovieInfo({ ...resp });
       });
   },[movieId]);
-    console.log(movieInfo)
-
+  
   return (
     <>
         <Link to="/">
@@ -39,13 +38,16 @@ export const MovieDetailsPage = () => {
         </ul>
           </div>
           
-          <div className={styles.additionalInformation}>
+      <div className={styles.additionalInformation}>
+        <p>Additional information</p>
               <ul>
                   <Link to="cast"><li>Cast</li></Link>
                   <Link to="reviews"><li>Reviews</li></Link> 
               </ul>
       </div>
+      
       <div>
+        
        <Outlet/>
         
       </div>
