@@ -2,7 +2,7 @@ import { Link, useParams,Outlet } from 'react-router-dom';
 import { fetchMoviesInfo } from 'utils/FetchMoviesInfo';
 import { useEffect, useState } from 'react';
 import styles from './MovieDetailsPage.module.css';
-import { Cast } from 'components/Cast/Cast';
+
 
 export const MovieDetailsPage = () => {
   const { movieId } = useParams();
