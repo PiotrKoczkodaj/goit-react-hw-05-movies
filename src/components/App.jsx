@@ -7,7 +7,7 @@ import { MoviesPage } from 'pages/MoviesPage/MoviesPage';
 import { fetchTrendingMovies } from 'utils/FetchTrendingMovies';
 import { Cast } from './Cast/Cast';
 import { Review } from './Review/Review';
-import { MoviesFilmListPages } from 'pages/MoviesFilmListPages/MoviesFilmListPages';
+
 
 export const App = () => {
  const [ ,setTrendingMovies] = useState([]);
