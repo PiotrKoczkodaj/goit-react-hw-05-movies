@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { MoviesListPages } from "pages/MoviesListPages/MoviesListPages";
+import { useNavigate } from "react-router-dom";
 
 export const MoviesPage = () => {
 
+    const navigate = useNavigate();
   const [queryValue, setQueryValue] = useState('');
     const [isRender, setIsRender] = useState(false);
 
@@ -12,12 +13,12 @@ export const MoviesPage = () => {
         setQueryValue(e.target.value)
     };
     const handleSubmit = (e) => {
-        e.preventDefault()
-       setIsRender(true)
+        e.preventDefault();
+        navigate(`/movies?query=${queryValue}`)
+        setIsRender(true)
+        
     }
 
-//   <Link to={`/movies?query=${queryValue}`}></Link>
-    
     return (
         <div>
         <form onSubmit={handleSubmit}>
