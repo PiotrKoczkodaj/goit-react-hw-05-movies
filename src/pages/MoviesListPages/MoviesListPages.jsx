@@ -9,12 +9,12 @@ export const MoviesListPages = ({ queryValue }) => {
     fetchMoviesSearch(queryValue).then(resp => {
         setSearchedMovies([...resp]);
     })
-  },[searchedMovies]);
+  },[searchedMovies,queryValue]);
 
     return (
         <ul>
             {searchedMovies.map(movie => (
-                <Link to={`${movie.id}`}><li>{movie.title }</li></Link>
+                <Link key={movie.id } to={`${movie.id}`}><li key={movie.id}>{movie.title }</li></Link>
         ))}
         </ul>
 )
