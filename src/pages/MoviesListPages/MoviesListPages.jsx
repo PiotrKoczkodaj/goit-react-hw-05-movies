@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import { fetchMoviesSearch } from 'utils/FetchMoviesSearch';
+import { Link } from 'react-router-dom';
 
 export const MoviesListPages = ({ queryValue }) => {
   const [searchedMovies, setSearchedMovies] = useState([]);
-    
     
    useEffect(() => {
     fetchMoviesSearch(queryValue).then(resp => {
@@ -11,13 +11,12 @@ export const MoviesListPages = ({ queryValue }) => {
     })
   },[searchedMovies]);
 
-    console.log(searchedMovies)
     return (
-        <>
-            {searchedMovies.map(el => (
-                <p>{el.title }</p>
+        <ul>
+            {searchedMovies.map(movie => (
+                <Link to={`${movie.id}`}><li>{movie.title }</li></Link>
         ))}
-        </>
+        </ul>
 )
  
 };
