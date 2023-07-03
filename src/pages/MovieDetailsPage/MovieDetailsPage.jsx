@@ -1,4 +1,4 @@
-import { Link, useParams,Outlet } from 'react-router-dom';
+import { Link, useParams,Outlet,useLocation } from 'react-router-dom';
 import { fetchMoviesInfo } from 'utils/FetchMoviesInfo';
 import { useEffect, useState } from 'react';
 import styles from './MovieDetailsPage.module.css';
@@ -7,7 +7,7 @@ import styles from './MovieDetailsPage.module.css';
 export const MovieDetailsPage = () => {
   const { movieId } = useParams();
   const [movieInfo, setMovieInfo] = useState({});
-
+const location = useLocation()
   useEffect(() => {
     fetchMoviesInfo(movieId)
       .then(resp =>resp.data)
@@ -16,12 +16,12 @@ export const MovieDetailsPage = () => {
       });
   },[movieId]);
   
+ const backHref = location.state?.from ?? '/movies';
   return (
     <>
-        <Link to="/">
+        <Link to={backHref}>
         <p>go back</p>
           </Link>
-          
       <div className={styles.firstInformations}>
         <img alt={`${movieInfo.title} poster`}
           src={`https://image.tmdb.org/t/p/w500/${movieInfo.poster_path}`}
