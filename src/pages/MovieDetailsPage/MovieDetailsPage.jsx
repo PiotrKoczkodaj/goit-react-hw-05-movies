@@ -16,10 +16,12 @@ const location = useLocation()
       });
   },[movieId]);
   
- const backHref = location.state?.from ?? '/movies';
+  const backHref = location.state?.from ?? '/movies';
+  
+ 
   return (
     <>
-        <Link to={backHref}>
+        <Link to={backHref } >
         <p>go back</p>
           </Link>
       <div className={styles.firstInformations}>
